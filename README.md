@@ -15,7 +15,7 @@ This project is based on the below Entity Relationship Diagram
 
 ### Running the application
 
-- Clone the repo
+- Clone the [GitHuB repo](https://github.com/Gogetter/spring-data-jpa-search)
 - Navigate to the project directory
 - Run 
     ```bash
