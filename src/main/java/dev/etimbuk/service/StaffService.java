@@ -1,8 +1,8 @@
 package dev.etimbuk.service;
 
+import dev.etimbuk.dto.PersonResponse;
 import dev.etimbuk.dto.StaffAppointmentResponse;
-import dev.etimbuk.dto.StaffResponse;
-import dev.etimbuk.mapper.StaffResponseMapper;
+import dev.etimbuk.mapper.PersonResponseMapper;
 import dev.etimbuk.repository.StaffRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,24 +18,24 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class StaffService {
     private final StaffRepository staffRepository;
-    private final StaffResponseMapper staffResponseMapper;
+    private final PersonResponseMapper staffResponseMapper;
 
-    public Optional<StaffResponse> findStaffByEmail(final String email) {
+    public Optional<PersonResponse> findStaffByEmail(final String email) {
         return staffRepository.findByEmail(email).map(staffResponseMapper::to);
     }
 
-    public List<StaffResponse> findAllByPositionAndHireDateBetween(final String position, final LocalDate startDate, final LocalDate endDate) {
+    public List<PersonResponse> findAllByPositionAndHireDateBetween(final String position, final LocalDate startDate, final LocalDate endDate) {
         return staffRepository.findAllByPositionAndHireDateBetween(position, startDate, endDate)
                 .stream()
                 .map(staffResponseMapper::to)
                 .toList();
     }
 
-    public List<StaffResponse> findAllByFirstNameStartingWith(final String firstName) {
+    public List<PersonResponse> findAllByFirstNameStartingWith(final String firstName) {
         return staffRepository.findAllByFirstNameStartingWith(firstName).stream().map(staffResponseMapper::to).toList();
     }
 
-    public List<StaffResponse> findAllByFirstNameStartingWithIgnoreCase(final String firstName) {
+    public List<PersonResponse> findAllByFirstNameStartingWithIgnoreCase(final String firstName) {
         return staffRepository.findAllByFirstNameStartingWithIgnoreCase(firstName).stream().map(staffResponseMapper::to).toList();
     }
 
