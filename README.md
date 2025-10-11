@@ -25,3 +25,5 @@ This project is based on the below Entity Relationship Diagram
     ## for Windows
     .\gradlew.bat bootRun
     ```
+
+## Blog post available [here]()
