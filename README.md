@@ -25,3 +25,5 @@ This project is based on the below Entity Relationship Diagram
     ## for Windows
     .\gradlew.bat bootRun
     ```
+
+## Blog post available [here](https://medium.com/@euedofia/spring-data-jpa-search-d4a5b5973e00)
